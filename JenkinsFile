@@ -25,11 +25,6 @@ pipeline {
                     dir("backend") { sh 'docker build -t backend:latest .' }
                 }
             }
-            stage("docker run") {
-                steps {
-                    sh 'docker run -p 8085:8080 -d backend:latest'
-                    sh 'docker run -p 8084:8080 -d frontend:latest'
-                }
-            }
+            
         }
 }
